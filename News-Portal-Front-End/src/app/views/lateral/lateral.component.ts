@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-lateral',
@@ -12,9 +13,9 @@ export class LateralComponent implements OnInit {
   protected name: string;
   protected options: any;
 
-  constructor() {
+  constructor(private auth: AuthService) {
     this.closePanel = new EventEmitter();
-    this.name = 'crispo9028';
+    this.name = this.auth.user;
   }
 
   ngOnInit(): void {

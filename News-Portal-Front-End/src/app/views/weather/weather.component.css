@@ -42,11 +42,6 @@
     box-shadow: 0 0 20px rgb(0, 173, 253);
 }
 
-.range {
-    margin-left: 25px;
-    width: 250px;
-}
-
 mat-paginator {
     background-color: transparent;
 }
