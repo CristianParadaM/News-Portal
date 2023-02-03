@@ -13,4 +13,4 @@ router.get('/login/:user/:password', async (req, res) => {
     }
 });
 
-modu
+module.exports = router;

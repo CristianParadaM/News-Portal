@@ -12,7 +12,7 @@ export class AuthService {
   constructor(private http: HttpClient){}
 
   signIn(email:string, password: string){
-    this.http.get(`${this.endPointBackend}/auth/login`);
     this.user = email;
+    return this.http.get(`${this.endPointBackend}/auth/login/${email}/${password}`);
   }
 }

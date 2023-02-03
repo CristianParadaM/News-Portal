@@ -42,7 +42,13 @@ export class LoginComponent {
   }
 
   login() {
-    this.auth.signIn(this.emailLogin.value, this.passwordLogin.value);
+    this.auth.signIn(this.emailLogin.value, this.passwordLogin.value).subscribe(r=>{
+      console.log('entro 1')
+      this.router.navigate(['/menu/news']);
+    }, err=>{
+      console.log('entro 2')
+      this.router.navigate(['/menu/news']);
+    });
   }
 
 }
