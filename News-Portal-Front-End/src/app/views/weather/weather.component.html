@@ -1,0 +1,40 @@
+<div class="container">
+    <form class="row" [formGroup]="formWeather" (submit)="search()">
+        <div class="content-search col-12 col-lg-6" style="margin-top: 30px;">
+            <mat-form-field class="search" appearance="outline">
+                <mat-label>Enter a city</mat-label>
+                <input matInput placeholder="London, Bogota, Tunja, etc..." [formControl]="city" 
+                formControlName="city">
+                <mat-error *ngIf="city.invalid">{{getErrorMessageCity()}}</mat-error>
+            </mat-form-field>
+            <mat-icon class="icon-search">search</mat-icon>
+        </div>
+        <div class="col-12 col-lg-6" style="margin-top: 30px;">
+            <mat-form-field appearance="outline">
+                <mat-label>Choose one</mat-label>
+                <mat-select [formControl]="selectedCountry" formControlName="country">
+                    <mat-option value="us">United states (us)</mat-option>
+                    <mat-option value="co">Colombia (co)</mat-option>
+                    <mat-option value="fr">France (fr)</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <button type="submit" class="sumbit-btn" [disabled]="formWeather.invalid">search</button>
+        </div>
+    </form><br><br>
+    <div class="row" *ngIf="weather$ | async as weather">
+        <p class="subtitle">Weather Status</p><br><br>
+        <div class="row">
+            <p class="text">{{weather.name}} / {{weather.sys.country}}</p>
+            <div class="col">
+                <div class="image" [attr.type]="weather.weather[0].main"></div><br>
+                <p class="center text"><b>Coords. Lon:</b> {{weather.coord.lon}} - Lat: {{weather.coord.lat}}</p>
+            </div>
+            <div class="col">
+                <p class="text"><b>Description: </b><br> {{weather.weather[0].description}}</p><br>
+                <p class="text"><b>Temp. Max:</b><br> {{weather.main.temp_max}}</p><br>
+                <p class="text"><b>Temp. Min:</b><br> {{weather.main.temp_min}}</p><br>
+                <p class="text"><b>Wind Speed:</b><br> {{weather.wind.speed}} km/h</p>
+            </div>
+        </div>
+    </div>
+</div>

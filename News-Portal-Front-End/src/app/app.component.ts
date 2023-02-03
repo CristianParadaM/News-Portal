@@ -7,10 +7,10 @@ import *  as AOS from 'aos';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  
-  constructor(){
-    AOS.init()
-    window.addEventListener('load',AOS.refresh);
+
+  constructor() {
+    AOS.init();
+    window.addEventListener('load', AOS.refresh);
   }
 
 }

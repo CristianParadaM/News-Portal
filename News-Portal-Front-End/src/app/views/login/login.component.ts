@@ -2,13 +2,15 @@ import { EventEmitter } from '@angular/core';
 import { Output } from '@angular/core';
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent{
+export class LoginComponent {
 
   @Output('close') closePanel: EventEmitter<boolean>;
   @Output('logged') isLogged: EventEmitter<boolean>;
@@ -18,7 +20,7 @@ export class LoginComponent{
 
   protected formLogin: FormGroup;
 
-  constructor(private formBuild: FormBuilder) {
+  constructor(private formBuild: FormBuilder, private auth: AuthService, private router: Router) {
     this.closePanel = new EventEmitter();
     this.isLogged = new EventEmitter();
     this.hide = true;
@@ -39,9 +41,13 @@ export class LoginComponent{
     return this.passwordLogin.hasError('required') ? 'You must enter some value' : ''
   }
 
-  login(option: number) {
-  //   (option == 0 ? this.auth.signInWithEmailAndPassword(this.formLogin.value.email, this.formLogin.value.password) :
-  //     option == 1 ? this.auth.signInWithFacebook() : this.auth.signInWithGoogle()).then(r => this.isLogged.emit(true));
+  login() {
+    // this.auth.signIn(this.emailLogin.value, this.passwordLogin.value).then((r) => {
+    //     console.log(r);
+    //     this.router.navigate(['/menu/news']);  
+    // }).catch((e) => {
+    //   console.log(e);
+    // })
   }
 
 }

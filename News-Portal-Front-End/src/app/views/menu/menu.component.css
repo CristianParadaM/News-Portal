@@ -1,0 +1,14 @@
+mat-drawer-container{
+    height: 100%;
+    color: white;
+}
+
+
+mat-drawer-content{
+    background: fixed no-repeat url('../../../assets/mountains.png');
+    background-size: 100% 100%;
+}
+
+mat-drawer-content::-webkit-scrollbar{
+    display: none;
+}

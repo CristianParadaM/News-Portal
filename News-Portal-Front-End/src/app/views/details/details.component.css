@@ -1,0 +1,52 @@
+#img{
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 10px;
+    transition: .5s;
+}
+
+#icon{
+    font-size: 30px;
+    transform: translate(-3px,0);
+}
+
+.button{
+    color: black;
+    margin: 20px 0 0 20px;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+}
+
+.container{
+    color: black;
+    padding: 20px;
+    background-color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.text{
+    font-size: 25px;
+    line-height: 35px;
+}
+
+hr{
+    margin-top: 30px;
+}
+
+#img:hover{
+    cursor: zoom-in;
+    transition: .5s;
+    transform: scale(1.5);
+}
+
+.content-img{
+    overflow: scroll;
+}
+
+.content-img::-webkit-scrollbar{
+    display: none;
+}

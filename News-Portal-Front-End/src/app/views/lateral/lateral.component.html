@@ -1,1 +1,20 @@
-<p>lateral works!</p>
+<header>
+    <p class="title"><mat-icon>home</mat-icon> Menu<button type="button" class="close" mat-icon-button
+            (click)="closePanel.emit(true)"><mat-icon>close</mat-icon></button></p>
+</header>
+<main>
+    <p class="subtitle">Hi!! {{name}}</p>
+    <br>
+    <p class="text">In this menu, you can then select one of the following options:</p>
+    <mat-list>
+        <div *ngFor="let option of options">
+            <a [routerLink]="option.link" class="option" (click)="closePanel.emit(true)">
+                <mat-list-item>
+                    <mat-icon matListItemIcon>{{option.icon}}</mat-icon>
+                    <div matListItemTitle>{{option.title}}</div>
+                </mat-list-item>
+            </a>
+            <mat-divider></mat-divider>
+        </div>
+    </mat-list>
+</main>

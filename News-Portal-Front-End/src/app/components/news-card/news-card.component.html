@@ -1,1 +1,13 @@
-<p>news-card works!</p>
+<mat-card class="card">
+    <img mat-card-image [src]="news.urlToImage" alt="image of new" class="img-card" onerror="this.src='assets/notfound.png'">
+    <mat-card-header>
+        <mat-card-title>{{news.title | limit: 80}}</mat-card-title>
+        <mat-card-subtitle>{{news.author}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <p class="description">{{news.description | limit:180}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button type="button" mat-button (click)="showDetails()">Read More</button>
+    </mat-card-actions>
+</mat-card>

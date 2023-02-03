@@ -4,7 +4,7 @@
 </header>
 <main>
     <img src="assets/logo.png" alt="logo News" class="logo">
-    <form (submit)="login(0)" [formGroup]="formLogin">
+    <form (submit)="login()" [formGroup]="formLogin">
         <mat-form-field appearance="outline">
             <mat-label>Enter your email address</mat-label>
             <input matInput placeholder="pat@example.com" [formControl]="emailLogin" formControlName="email" required>
