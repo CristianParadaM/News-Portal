@@ -1,0 +1,25 @@
+<header>
+    <p class="title"><mat-icon>supervised_user_circle</mat-icon> Login <button type="button" class="close"
+            mat-icon-button (click)="closePanel.emit(true)"><mat-icon>close</mat-icon></button></p>
+</header>
+<main>
+    <img src="assets/logo.png" alt="logo News" class="logo">
+    <form (submit)="login()" [formGroup]="formLogin">
+        <mat-form-field appearance="outline">
+            <mat-label>Enter your email address</mat-label>
+            <input matInput placeholder="pat@example.com" [formControl]="emailLogin" formControlName="email" required>
+            <mat-error *ngIf="emailLogin.invalid">{{getErrorMessageEmail()}}</mat-error>
+        </mat-form-field><br>
+        <mat-form-field appearance="outline">
+            <mat-label>Enter your password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" [formControl]="passwordLogin" formControlName="password"
+                required>
+            <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error *ngIf="passwordLogin.invalid">{{getErrorMessagePassword()}}</mat-error>
+        </mat-form-field><br><br>
+        <button type="submit" class="sumbit-btn" [disabled]="formLogin.invalid">Entrar</button>
+    </form>
+</main>

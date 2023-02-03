@@ -1,0 +1,81 @@
+.container {
+    padding: 30px;
+    color: black;
+}
+
+.sumbit-btn {
+    height: 55px;
+    width: 100px;
+    border-width: 1px;
+    margin-left: 20px;
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+.image {
+    width: 100%;
+    height: 400px;
+}
+
+.text{
+    font-size: 20px;
+}
+
+.image[type='Clouds'] {
+    background: fixed no-repeat url('../../../assets/clouds.jpeg');
+    background-size: 100% 100%;
+}
+
+.image[type='Mist'] {
+    background: fixed no-repeat url('../../../assets/mist.jpg');
+    background-size: 100% 100%;
+}
+
+.image[type='Clear'] {
+    background: fixed no-repeat url('../../../assets/despejado.jpg');
+    background-size: 100% 100%;
+}
+
+.sumbit-btn:enabled:hover {
+    background-color: #2E75B6;
+    color: white;
+    box-shadow: 0 0 20px rgb(0, 173, 253);
+}
+
+mat-paginator {
+    background-color: transparent;
+}
+
+mat-datepicker-toggle {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.search {
+    width: 100%;
+    height: 40px;
+    padding-left: 10px;
+}
+
+.subtitle {
+    font-size: 40px;
+    margin: 20px 0 20px 0;
+    text-align: left;
+    font-weight: bold;
+}
+
+.content-search {
+    position: relative;
+    color: black;
+}
+
+.icon-search {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+}
+
+.search:focus {
+    outline: none;
+}

@@ -1,0 +1,25 @@
+<button type="button" class="button" mat-icon-button (click)="goBack()"><mat-icon id="icon">arrow_back</mat-icon></button>
+<div class="container">
+    <div class="row">
+        <p class="text center"><b>{{news.title}}</b> / {{news.author}}</p>
+        <div class="content-img">
+            <img [src]="news.urlToImage" alt="img of news" id="img">
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-12 col-lg-6">
+                <p class="text justify"><b>Description:</b><br>{{news.description}}</p><br>
+
+            </div>
+            <div class="col-12 col-lg-6">
+                <p class="text justify"><b>Content:</b><br>{{news.content}}</p><br>
+
+            </div>
+        </div>
+        <p class="text center"><b>Source:</b><br>{{news.source}}</p><br>
+        <hr>
+        <p class="text justify"><b>See the complete news in the following link:</b><br><a [href]="news.url"
+                target="_blank">{{news.url}}</a></p>
+        <hr>
+    </div>
+</div>
