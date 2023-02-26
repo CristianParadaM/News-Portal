@@ -1,0 +1,51 @@
+<header>
+    <p class="title"><button type="button" mat-icon-button class="back"
+            (click)="back()"><mat-icon>keyboard_backspace</mat-icon></button>
+        <mat-icon style="transform: translate(-5px,5px);">supervised_user_circle</mat-icon>
+        User Registration<button type="button" mat-icon-button class="close"
+            (click)="close()"><mat-icon>close</mat-icon></button>
+    </p>
+</header>
+<main>
+    <img src="assets/logo.png" alt="logo News" class="logo">
+    <form (submit)="register()" [formGroup]="formRegister">
+        <mat-form-field appearance="outline">
+            <mat-label>Enter your name</mat-label>
+            <input matInput placeholder="Cristian David" [formControl]="names" formControlName="names" required>
+            <mat-error *ngIf="names.invalid">{{getErrorMessageRequired(1)}}</mat-error>
+        </mat-form-field><br>
+        <mat-form-field appearance="outline">
+            <mat-label>Enter your lastname</mat-label>
+            <input matInput placeholder="Parada Martinez" [formControl]="lastnames" formControlName="lastnames"
+                required>
+            <mat-error *ngIf="lastnames.invalid">{{getErrorMessageRequired(2)}}</mat-error>
+        </mat-form-field><br>
+        <mat-form-field appearance="outline">
+            <mat-label>Enter your email</mat-label>
+            <input matInput placeholder="pat@example.com" [formControl]="emailRegister" formControlName="email"
+                required>
+            <mat-error *ngIf="emailRegister.invalid">{{getErrorMessageEmail()}}</mat-error>
+        </mat-form-field><br>
+        <mat-form-field appearance="outline">
+            <mat-label>Enter your password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" [formControl]="passwordRegister"
+                formControlName="password" required>
+            <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error *ngIf="passwordRegister.invalid">{{getErrorMessagePassword()}}</mat-error>
+        </mat-form-field><br>
+        <mat-form-field appearance="outline">
+            <mat-label>Repeat your password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" [formControl]="passwordCRegister"
+                formControlName="passwordC" required>
+            <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error *ngIf="passwordCRegister.invalid">{{getErrorMessagePasswordC()}}</mat-error>
+        </mat-form-field><br><br>
+        <button type="submit" class="sumbit-btn" [disabled]="formRegister.invalid">Register</button>
+    </form>
+</main>

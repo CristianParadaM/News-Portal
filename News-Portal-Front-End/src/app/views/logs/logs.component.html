@@ -1,6 +1,0 @@
-<div class="container">
-    <p class="title"><b>Logs</b></p><br><br>
-    <div *ngIf="logs$ | async as logs">
-        <p *ngFor="let log of logs; index as i" class="text">{{i+1}}. {{log.logEntry}}</p>
-    </div>
-</div>

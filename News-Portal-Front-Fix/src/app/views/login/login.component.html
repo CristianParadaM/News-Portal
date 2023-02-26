@@ -1,0 +1,32 @@
+<header>
+    <p class="title"><mat-icon>supervised_user_circle</mat-icon> Login <button type="button" class="close"
+            mat-icon-button (click)="closePanel.emit(true)"><mat-icon>close</mat-icon></button></p>
+</header>
+<main>
+    <img src="assets/logo.png" alt="logo News" class="logo">
+    <form (submit)="login()" [formGroup]="formLogin">
+        <mat-form-field appearance="outline">
+            <mat-label>Enter your email address</mat-label>
+            <input matInput placeholder="pat@example.com" [formControl]="emailLogin" formControlName="email" required>
+            <mat-error *ngIf="emailLogin.invalid">{{getErrorMessageEmail()}}</mat-error>
+        </mat-form-field><br>
+        <mat-form-field appearance="outline">
+            <mat-label>Enter your password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" [formControl]="passwordLogin" formControlName="password"
+                required>
+            <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error *ngIf="passwordLogin.invalid">{{getErrorMessagePassword()}}</mat-error>
+        </mat-form-field><br><br>
+        <button type="submit" class="sumbit-btn" [disabled]="formLogin.invalid">Login</button>
+    </form><br>
+    <div class="text-start">
+        <p>Don't have an account?</p>
+        <a (click)="isRegister.emit(true)" class="text-start">Register a new User</a><br><br>
+        <p>or login with</p>
+        <img src="assets/googleicon.png" alt="social icon" class="icon-social" (click)="loginSocialNetwork(0)">
+        <img src="assets/facebookicon.png" alt="social icon" class="icon-social" (click)="loginSocialNetwork(1)">
+    </div>
+</main>
