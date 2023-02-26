@@ -1,0 +1,74 @@
+header {
+    background-color: #2E75B6;
+    padding: 10px 0 10px 0;
+    width: 500px;
+    height: 70px;
+}
+
+.title{
+    text-align: center;
+    font-size: 25px;
+    color: white;
+} 
+
+.subtitle{
+    font-size: 20px;
+    color: white;
+    text-shadow: 1px 1px black;
+}
+
+mat-form-field{
+    width: 100%;
+}
+
+input::-ms-reveal {
+    display: none;
+}
+
+main{
+    height: calc(80% - 57px);
+    text-align: center;
+    padding: 0 30px 0 30px;
+}
+
+.sumbit-btn{
+    width: 100px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(16, 162, 211);
+    color: white;
+    border: 1px solid black;
+}
+
+.sumbit-btn:hover{
+    box-shadow: 0 0 20px rgb(16, 162, 211);
+}
+
+.sumbit-btn:disabled{
+    border: 1px solid rgb(191, 191, 191);
+    background-color: transparent;
+    color: rgb(136, 136, 136);
+}
+
+footer{
+    padding: 10px;
+    height: 20%;
+    background-color: #2E75B6;
+}
+
+.close{
+    color: white;
+    position: absolute;
+    right: 10px;
+}
+
+.back{
+    color: white;
+    position: absolute;
+    left: 10px;
+}
+
+.logo{
+    width: 100px;
+    margin: 20px 10px 20px 0;
+}

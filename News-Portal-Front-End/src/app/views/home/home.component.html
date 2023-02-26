@@ -1,9 +1,0 @@
-<mat-drawer-container hasBackdrop="true">
-    <mat-drawer #drawer mode="over">
-        <app-login (close)="drawer.toggle()"></app-login>
-    </mat-drawer>
-    <mat-drawer-content>
-        <app-nav-bar (click-menu)="drawer.toggle()"></app-nav-bar>
-        <app-advertisements (login)="drawer.toggle()"></app-advertisements>
-    </mat-drawer-content>
-</mat-drawer-container>

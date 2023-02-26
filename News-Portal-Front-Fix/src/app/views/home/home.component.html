@@ -1,0 +1,10 @@
+<mat-drawer-container hasBackdrop="true">
+    <mat-drawer #drawer mode="over">
+        <app-login *ngIf="isLogin" (close)="drawer.toggle()" (register)="isLogin = false"></app-login>
+        <app-register *ngIf="!isLogin" (closeRegister)="drawer.toggle()" (backToLogin)="isLogin = true"></app-register>
+    </mat-drawer>
+    <mat-drawer-content>
+        <app-nav-bar (click-menu)="drawer.toggle()"></app-nav-bar>
+        <app-advertisements (login)="drawer.toggle()"></app-advertisements>
+    </mat-drawer-content>
+</mat-drawer-container>
